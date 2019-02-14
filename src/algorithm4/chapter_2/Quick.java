@@ -15,7 +15,7 @@ public class Quick extends BaseSort {
 
     private static int partition(Comparable[] a, int lo, int hi) {
         /*
-        使用 i指针向后移动，直到找到第一个大于a[lo]的元素， j指针一直向前直到找到第一个大于a[lo]的元素，交换并继续循环寻找， 直到得到左小右大的情况。
+        使用 i指针向后移动，直到找到第一个大于a[lo]的元素， j指针一直向前直到找到第一个小于a[lo]的元素，交换并继续循环寻找， 直到得到左小右大的情况。
          */
         int i = lo, j = hi+1;
         Comparable v = a[lo];

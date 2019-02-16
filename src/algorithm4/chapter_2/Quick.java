@@ -46,7 +46,7 @@ public class Quick extends BaseSort {
     }
 
     private static void sort(Comparable[] a, int lo, int hi) {
-        if (hi >= lo) { return; }
+        if (hi <= lo) { return; }
         int j = partition(a, lo, hi);
         sort(a, lo, j-1);
         sort(a, j+1, hi);
@@ -54,7 +54,7 @@ public class Quick extends BaseSort {
 
     public static void main(String[] args) {
         Integer[] a = new Integer[]{1,1,3,4,1,6,7,8,1};
-        MergeBU.sort(a);
+        Quick.sort(a);
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
         }

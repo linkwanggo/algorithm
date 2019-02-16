@@ -6,6 +6,7 @@ import algorithm4.chapter_1.Shell;
 import algorithm4.chapter_2.Merge;
 import algorithm4.chapter_2.MergeBU;
 import algorithm4.chapter_2.Quick;
+import algorithm4.chapter_2.Quick3way;
 import util.StdRandom;
 import util.Stopwatch;
 
@@ -29,6 +30,9 @@ public class SortCompare {
         }
         if (alg.equals("Quick")) {
             Quick.sort(a);
+        }
+        if (alg.equals("Quick3way")) {
+            Quick3way.sort(a);
         }
         return timer.elapsedTime();
     }

@@ -619,6 +619,43 @@ public final class StdRandom {
         }
     }
 
+    // 随机生成 n个 0 - n之间的数
+    public static Integer[] generateRandomArray(int lo, int hi, int length) {
+        if (length < 0) {
+            throw new IllegalArgumentException("length < 0");
+        }
+        if (lo < 0 || hi > length || lo > hi) {
+            throw new IllegalArgumentException("subarray indices out of bounds: [" + lo + ", " + hi + ")");
+        }
+        Integer[] arr = new Integer[length];
+        for (int i = 0; i < length; i++) {
+            int num = random.nextInt(hi - lo) + lo;
+            arr[i] = num;
+        }
+        return arr;
+    }
+
+
+    public static Integer[] generateNearlyRandomArray(int length, int swapTime) {
+        Integer[] arr = new Integer[length];
+        for (int i = 0; i < length; i++) {
+            arr[i] = i;
+        }
+        // 随机交换swapTime次
+        for (int i = 0; i < swapTime; i++) {
+            int x = random.nextInt(length);
+            int y = random.nextInt(length);
+            exchange(arr, x, y);
+        }
+        return arr;
+    }
+
+    public static void exchange(Comparable[] a, int i, int j) {
+        Comparable temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
     /**
      * Unit tests the methods in this class.
      *

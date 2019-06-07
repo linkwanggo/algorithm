@@ -4,7 +4,7 @@ import util.StdOut;
 
 public class BaseSort {
     // abstract
-    public static void sort(Comparable[] a) {};
+    public static void sort(Comparable[] a) {}
 
     public static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;

@@ -11,13 +11,16 @@ import util.StdRandom;
 import util.Stopwatch;
 
 public class SortCompare {
-    public static double time(String alg, Double[] a) {
+    public static double time(String alg, Comparable[] a) {
         Stopwatch timer = new Stopwatch();
         if (alg.equals("Selection")) {
             Selection.sort(a);
         }
         if (alg.equals("Insertion")) {
             Insertion.sort(a);
+        }
+        if (alg.equals("Insertion2")) {
+            Insertion.insertionSort(a);
         }
         if (alg.equals("Shell")) {
             Shell.sort(a);
@@ -49,6 +52,8 @@ public class SortCompare {
         }
         return total;
     }
+
+
 
     public static void main(String[] args) {
         String alg1 = args[0];
